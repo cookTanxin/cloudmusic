@@ -1,15 +1,26 @@
 import styled from "styled-components";
 import logoimg from "@/assets/img/sprite_01.png";
+import topbarimg from "@/assets/img/topbar.png";
 // antd;
 import { Input } from "antd";
 // header 样式
 const AppHeader = styled.div`
   width: 100%;
-  height: 70px;
+  height: 76px;
+  position: fixed;
+  top: 0;
   background-color: #242424;
   .headerinner {
     display: flex;
     align-items: center;
+  }
+  .hearder-active {
+    width: 100%;
+    .header-active-line {
+      width: 100%;
+      height: 6px;
+      background-color: #b2281e;
+    }
   }
   .logo-area {
     display: inline-block;
@@ -37,6 +48,16 @@ const AppHeader = styled.div`
       &.active {
         background-color: #000000;
         color: #fff;
+        .nav-arrow {
+          display: block;
+          width: 12px;
+          height: 7px;
+          background-color: orange;
+          margin: -6px auto 0 auto;
+          background: url(${topbarimg}) no-repeat;
+          background-position: -105px -70px;
+          background-size: 120px auto;
+        }
       }
     }
   }

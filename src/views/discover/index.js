@@ -1,7 +1,14 @@
 import React, { memo } from "react";
 
+// style
+import { DiscoverWrap } from "./style";
+
 const index = memo(() => {
-  return <div>发现音乐</div>;
+  return (
+    <DiscoverWrap>
+      <div>1111</div>
+    </DiscoverWrap>
+  );
 });
 
 export default index;

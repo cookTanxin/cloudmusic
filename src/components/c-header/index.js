@@ -1,5 +1,7 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+// classnames
+// import classNames from "classnames";
 // antd
 import { SearchOutlined } from "@ant-design/icons";
 // 本地数据
@@ -8,14 +10,23 @@ import { headerLinks } from "@/services/local-data.js";
 // 样式
 import { AppHeader, StyledInput } from "./style";
 
+// custom hook
+// import useScrollHeight from "@/hook/useScrollHeight";
+
 const index = memo((props) => {
+  // 路由导航
   const navigate = useNavigate();
+  // react hooks
+  useEffect(() => {
+    console.log("mounted");
+  }, []);
   // 循环navlink函数
   const setNavLink = (item, index) => {
     if (index < 3) {
       return (
         <NavLink to={item.link} key={item.title}>
           {item.title}
+          <i className="nav-arrow"></i>
         </NavLink>
       );
     } else {
@@ -50,6 +61,11 @@ const index = memo((props) => {
           <div className="createbtn">创作者中心</div>
           <div className="login-text">登录</div>
         </div>
+      </div>
+      {/* 底部选中项 */}
+      <div className="hearder-active">
+        {/* 红色线条 */}
+        <div className="header-active-line"></div>
       </div>
     </AppHeader>
   );

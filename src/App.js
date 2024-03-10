@@ -9,7 +9,9 @@ function App() {
     <>
       <AppHeader></AppHeader>
       {/* react-router 路由渲染位置 */}
-      <RouterConfig></RouterConfig>
+      <div className="app-content-container">
+        <RouterConfig></RouterConfig>
+      </div>
       <AppFooter></AppFooter>
     </>
   );
