@@ -1,21 +1,17 @@
+// react
 import React, { memo, useEffect } from "react";
+// react-router
 import { NavLink, useNavigate } from "react-router-dom";
-// classnames
-// import classNames from "classnames";
 // antd
 import { SearchOutlined } from "@ant-design/icons";
 // 本地数据
 import { headerLinks } from "@/services/local-data.js";
-
 // 样式
 import { AppHeader, StyledInput } from "./style";
-
-// custom hook
-// import useScrollHeight from "@/hook/useScrollHeight";
-
 const index = memo((props) => {
   // 路由导航
   const navigate = useNavigate();
+
   // react hooks
   useEffect(() => {
     console.log("mounted");
