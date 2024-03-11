@@ -8,6 +8,7 @@ const AppHeader = styled.div`
   width: 100%;
   height: 76px;
   position: fixed;
+  z-index: 99;
   top: 0;
   background-color: #242424;
   .headerinner {
