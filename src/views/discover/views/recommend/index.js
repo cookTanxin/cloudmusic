@@ -6,6 +6,8 @@ import { Recommendwrap } from "./style";
 import Cbanner from "./components/c-banner";
 // hotcommend 组件
 import HotRecommend from "./components/c-hotrecommend";
+// 新专辑组件
+import Newalbum from "./components/c-newalbum";
 const Recommend = memo(() => {
   return (
     <Recommendwrap>
@@ -19,6 +21,8 @@ const Recommend = memo(() => {
           <div className="recommend-left">
             {/* 推荐区块 */}
             <HotRecommend></HotRecommend>
+            {/* 新专辑  */}
+            <Newalbum></Newalbum>
           </div>
           <div className="recommend-right">右侧</div>
         </div>

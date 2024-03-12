@@ -13,3 +13,10 @@ export function getHotRecommendData() {
     url: "/personalized",
   });
 }
+
+// 获取新歌数据
+export function getNewAlbumData() {
+  return request({
+    url: "/top/playlist/highquality",
+  });
+}

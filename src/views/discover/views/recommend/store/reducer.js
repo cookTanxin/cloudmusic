@@ -6,6 +6,8 @@ const defaultStore = {
   banners: [],
   // 热门推荐数据
   hotRecommend: [],
+  // 新专辑
+  newAlbum: [],
 };
 
 function reducer(state = defaultStore, action) {
@@ -14,6 +16,8 @@ function reducer(state = defaultStore, action) {
       return { ...state, banners: action.banners };
     case actionTypes.CHANGE_HOT_RECOMMEND:
       return { ...state, hotRecommend: action.hotRecommend };
+    case actionTypes.CHANGE_NEW_ALBUM:
+      return { ...state, newAlbum: action.newAlbum };
     default:
       return state;
   }

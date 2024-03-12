@@ -50,8 +50,8 @@ const HotRecommend = memo(() => {
       <div className="hot-content">
         {hotrecommenddata.map((item, index) => {
           return (
-            <div className="item">
-              <Cmusicitem key={item.id} item={item}></Cmusicitem>
+            <div className="item" key={item.id}>
+              <Cmusicitem item={item}></Cmusicitem>
             </div>
           );
         })}
