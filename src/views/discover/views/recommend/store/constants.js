@@ -1,2 +1,3 @@
 // 管理banner 数据
 export const CHANGE_TOP_BANNER = "CHANGE_TOP_BANNER";
+export const CHANGE_HOT_RECOMMEND = "CHANGE_HOT_RECOMMEND";

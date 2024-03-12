@@ -1,14 +1,25 @@
-import React, { memo } from "react";
+import React, { memo, forwardRef, useImperativeHandle } from "react";
 // style
 import { CommonWrap } from "./style";
 // 属性校验
 import PropTypes from "prop-types";
-const Commontitle = memo((props) => {
+
+const Commontitle = forwardRef((props, ref) => {
   const { title, rlist } = props;
   // 跳转更多
-  const goMore = () => {
-    console.log("first");
+  const userClick = () => {
+    props.goMore();
   };
+  // 自定义访问导入方法 父组件通过ref 调用 子组件内部的方法
+  const lookList = () => {
+    console.log("通过ref 调用了");
+    console.log(rlist);
+  };
+  // 暴露给父组件的实例和方法 和属性
+  useImperativeHandle(ref, () => ({
+    look: lookList,
+    list: rlist,
+  }));
   return (
     <CommonWrap>
       <div className="left-area">
@@ -30,7 +41,7 @@ const Commontitle = memo((props) => {
           )}
         </div>
       </div>
-      <div className="right-area" onClick={(e) => goMore()}>
+      <div className="right-area" onClick={(e) => userClick()}>
         <span>更多</span>
         <i className="bgicon"></i>
       </div>
@@ -49,4 +60,4 @@ Commontitle.defaultProps = {
   title: "腾讯推荐",
   rlist: [],
 };
-export default Commontitle;
+export default memo(Commontitle);
