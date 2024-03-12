@@ -32,7 +32,7 @@ const Newalbum = memo(() => {
         <Commontitle title="新碟上架" goMore={gopage}></Commontitle>
       </div>
       <div className="newalbum-content">
-        <Albumswipwer albums={newAlbum} auto></Albumswipwer>
+        <Albumswipwer albums={newAlbum} auto={true}></Albumswipwer>
       </div>
     </NewalbumWrap>
   );

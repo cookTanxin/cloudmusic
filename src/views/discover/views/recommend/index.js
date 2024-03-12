@@ -24,7 +24,7 @@ const Recommend = memo(() => {
             {/* 新专辑  */}
             <Newalbum></Newalbum>
           </div>
-          <div className="recommend-right">右侧</div>
+          <div className="recommend-right"></div>
         </div>
       </div>
     </Recommendwrap>

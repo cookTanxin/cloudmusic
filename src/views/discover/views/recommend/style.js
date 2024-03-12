@@ -14,6 +14,7 @@ const Recommendwrap = styled.div`
       }
       .recommend-right {
         width: 250px;
+        background-color: #fff;
       }
     }
   }
