@@ -5,6 +5,11 @@ const NewalbumWrap = styled.div`
   .newalbum-content {
     margin-top: 20px;
   }
+  .loading-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export { NewalbumWrap };

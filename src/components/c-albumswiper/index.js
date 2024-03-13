@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { NewalumbWarp } from "./style";
 // component
 import AlbumItem from "../c-albumitem";
-const Albumswipwer = memo(({ albums, auto }) => {
+const Albumswipwer = memo(({ albums, auto, duration }) => {
   // 盒子宽度
   const albumWidht = 630;
   // 声明一个变量保存 计时器id
@@ -22,12 +22,12 @@ const Albumswipwer = memo(({ albums, auto }) => {
         if (count >= albums.length / 5) {
           setcount(0);
         }
-      }, 2000);
+      }, duration);
     }
     return () => {
       clearInterval(timerRef.current);
     };
-  }, [auto, albums.length, count]);
+  }, [auto, albums.length, count, duration]);
 
   // 点击左边
   const clickLeft = () => {
@@ -73,11 +73,14 @@ Albumswipwer.propTypes = {
   albums: PropTypes.array.isRequired,
   // 是否自动轮播
   auto: PropTypes.bool,
+  // 轮播时间
+  duration: PropTypes.number,
 };
 
 Albumswipwer.defaultProps = {
   albums: [],
   auto: false,
+  duration: 3000,
 };
 
 export default Albumswipwer;

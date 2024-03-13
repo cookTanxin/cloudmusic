@@ -8,6 +8,8 @@ import { NewalbumWrap } from "./style";
 // component
 import Commontitle from "@/components/c-commontitle";
 import Albumswipwer from "@/components/c-albumswiper";
+// andt
+import { Spin } from "antd";
 const Newalbum = memo(() => {
   // react-redux
   const dispatch = useDispatch();
@@ -28,12 +30,22 @@ const Newalbum = memo(() => {
 
   return (
     <NewalbumWrap>
-      <div className="commontitle">
-        <Commontitle title="新碟上架" goMore={gopage}></Commontitle>
-      </div>
-      <div className="newalbum-content">
-        <Albumswipwer albums={newAlbum} auto={true}></Albumswipwer>
-      </div>
+      <>
+        {newAlbum.length <= 0 ? (
+          <div className="loading-area">
+            <Spin />
+          </div>
+        ) : (
+          <>
+            <div className="commontitle">
+              <Commontitle title="新碟上架" goMore={gopage}></Commontitle>
+            </div>
+            <div className="newalbum-content">
+              <Albumswipwer albums={newAlbum} auto={true}></Albumswipwer>
+            </div>
+          </>
+        )}
+      </>
     </NewalbumWrap>
   );
 });
