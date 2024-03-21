@@ -1,5 +1,5 @@
 // react
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 // react-router
 import { NavLink, useNavigate } from "react-router-dom";
 // antd
@@ -11,11 +11,6 @@ import { AppHeader, StyledInput } from "./style";
 const index = memo((props) => {
   // 路由导航
   const navigate = useNavigate();
-
-  // react hooks
-  useEffect(() => {
-    console.log("mounted");
-  }, []);
   // 循环navlink函数
   const setNavLink = (item, index) => {
     if (index < 3) {
