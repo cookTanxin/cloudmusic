@@ -15,6 +15,8 @@ import Djradio from "../views/discover/views/djradio";
 import Artst from "../views/discover/views/artist";
 // 专辑
 import Album from "../views/discover/views/album";
+// 歌曲
+import Song from "../views/song";
 
 // 一级路由
 import Cmine from "@/views/mine";
@@ -57,6 +59,10 @@ const routes = [
       {
         path: "album",
         element: <Album />,
+      },
+      {
+        path: "song/:id",
+        element: <Song></Song>,
       },
     ],
   },

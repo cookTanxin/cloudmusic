@@ -1,10 +1,18 @@
 import React, { memo } from "react";
+// react-router
+import { useNavigate } from "react-router-dom";
 // style
 import { MusicItemwrap, MusicItemTop, MusicItemBottom } from "./style";
 const Musicitem = memo((props) => {
   const { item } = props;
+  // navigate
+  const navigate = useNavigate();
+  // 跳转到song 页面
+  const goSonpage = () => {
+    navigate("/discover/song/10");
+  };
   return (
-    <MusicItemwrap>
+    <MusicItemwrap onClick={goSonpage}>
       <MusicItemTop $bgimg={item.picUrl}>
         <div className="music-data">
           <div className="music-left">

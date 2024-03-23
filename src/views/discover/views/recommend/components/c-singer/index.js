@@ -5,7 +5,7 @@ import Commontitle from "@/components/c-commontitle";
 import Singeritem from "@/components/c-singeritem";
 // style
 import { SingerWrap } from "./style";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 // action
 import { getHotSiner } from "../../store/actionCreators";
 // 导入动画
@@ -21,7 +21,7 @@ const Singer = memo(() => {
     return {
       hotSinger: state.recommend.hotSinger,
     };
-  });
+  }, shallowEqual);
   console.log(hotSinger);
   return (
     <SingerWrap>
