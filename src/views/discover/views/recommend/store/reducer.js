@@ -8,6 +8,8 @@ const defaultStore = {
   hotRecommend: [],
   // 新专辑
   newAlbum: [],
+  // 热门歌手
+  hotSinger: [],
 };
 
 function reducer(state = defaultStore, action) {
@@ -18,6 +20,8 @@ function reducer(state = defaultStore, action) {
       return { ...state, hotRecommend: action.hotRecommend };
     case actionTypes.CHANGE_NEW_ALBUM:
       return { ...state, newAlbum: action.newAlbum };
+    case actionTypes.CHANGE_HOT_SINGER:
+      return { ...state, hotSinger: action.hotSinger };
     default:
       return state;
   }

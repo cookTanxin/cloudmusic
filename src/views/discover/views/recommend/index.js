@@ -8,6 +8,8 @@ import Cbanner from "./components/c-banner";
 import HotRecommend from "./components/c-hotrecommend";
 // 新专辑组件
 import Newalbum from "./components/c-newalbum";
+// 歌手组件
+import Singer from "./components/c-singer";
 const Recommend = memo(() => {
   return (
     <Recommendwrap>
@@ -24,7 +26,9 @@ const Recommend = memo(() => {
             {/* 新专辑  */}
             <Newalbum></Newalbum>
           </div>
-          <div className="recommend-right"></div>
+          <div className="recommend-right">
+            <Singer></Singer>
+          </div>
         </div>
       </div>
     </Recommendwrap>

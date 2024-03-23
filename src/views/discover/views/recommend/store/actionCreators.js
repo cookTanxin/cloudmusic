@@ -6,6 +6,7 @@ import {
   getBannerData,
   getHotRecommendData,
   getNewAlbumData,
+  getHotSingerlistData,
 } from "@/services/recommend";
 
 // 管理banner数据
@@ -24,6 +25,12 @@ export const changeHotrecommendAction = (res) => ({
 export const changeAlbumAction = (res) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,
   newAlbum: res.playlists,
+});
+
+//管理歌手列表
+export const changeHotSinerAction = (res) => ({
+  type: actionTypes.CHANGE_HOT_SINGER,
+  hotSinger: res.result,
 });
 
 // 异步操作 banner 因为action 都是同步的 只返回一个对象 但是在实际开发中 很多场景都是异步的
@@ -51,5 +58,15 @@ export const getNewalbum = () => {
     const data = await getNewAlbumData();
     // 异步提交action
     dispatch(changeAlbumAction(data));
+  };
+};
+
+// 获取歌手
+export const getHotSiner = () => {
+  return async (dispatch) => {
+    const data = await getHotSingerlistData();
+    console.log(data.result);
+    // 异步提交action
+    dispatch(changeHotSinerAction(data));
   };
 };

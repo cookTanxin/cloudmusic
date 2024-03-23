@@ -5,7 +5,7 @@ import { CommonWrap } from "./style";
 import PropTypes from "prop-types";
 
 const Commontitle = forwardRef((props, ref) => {
-  const { title, rlist } = props;
+  const { title, rlist, showPointimg } = props;
   // 跳转更多
   const userClick = () => {
     props.goMore();
@@ -24,7 +24,7 @@ const Commontitle = forwardRef((props, ref) => {
     <CommonWrap>
       <div className="left-area">
         <div className="left-title">
-          <i className="bgicon"></i>
+          {showPointimg && <i className="bgicon"></i>}
           <p>{title}</p>
           {/* 推荐列表 */}
           {rlist.length > 0 && (
@@ -53,11 +53,14 @@ const Commontitle = forwardRef((props, ref) => {
 Commontitle.propTypes = {
   title: PropTypes.string.isRequired,
   rlist: PropTypes.array,
+  // 是否显示圆点图片
+  showPointimg: PropTypes.bool,
 };
 
 // 可以设置默认值
 Commontitle.defaultProps = {
   title: "腾讯推荐",
   rlist: [],
+  showPointimg: true,
 };
 export default memo(Commontitle);

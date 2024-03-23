@@ -20,3 +20,16 @@ export function getNewAlbumData() {
     url: "/top/playlist/highquality",
   });
 }
+
+// 获取歌手数据
+export function getSingerlist() {
+  return request({
+    url: "/artist/list?cat=1001",
+  });
+}
+// 获取热门歌手
+export function getHotSingerlistData() {
+  return request({
+    url: "/personalized/newsong",
+  });
+}
