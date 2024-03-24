@@ -9,7 +9,8 @@ const Musicitem = memo((props) => {
   const navigate = useNavigate();
   // 跳转到song 页面
   const goSonpage = () => {
-    navigate("/discover/song/10");
+    console.log(item);
+    // navigate("/discover/song/10");
   };
   return (
     <MusicItemwrap onClick={goSonpage}>

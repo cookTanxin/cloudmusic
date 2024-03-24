@@ -58,6 +58,29 @@ const SongWrap = styled.div`
         margin-left: 2px;
       }
     }
+    .tag-area {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      span {
+        font-size: 13px;
+      }
+      .tag-list {
+        display: flex;
+        align-items: center;
+        .tagitem {
+          margin-left: 10px;
+        }
+      }
+    }
+    .song-word {
+      margin-top: 20px;
+      ul {
+        li {
+          font-size: 13px;
+        }
+      }
+    }
   }
 `;
 

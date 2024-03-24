@@ -10,6 +10,8 @@ import HotRecommend from "./components/c-hotrecommend";
 import Newalbum from "./components/c-newalbum";
 // 歌手组件
 import Singer from "./components/c-singer";
+// 排行榜
+import Ranking from "./components/c-ranking";
 const Recommend = memo(() => {
   return (
     <Recommendwrap>
@@ -25,6 +27,8 @@ const Recommend = memo(() => {
             <HotRecommend></HotRecommend>
             {/* 新专辑  */}
             <Newalbum></Newalbum>
+            {/* 排行榜 */}
+            <Ranking></Ranking>
           </div>
           <div className="recommend-right">
             <Singer></Singer>

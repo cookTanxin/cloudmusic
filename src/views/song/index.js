@@ -1,8 +1,11 @@
 import React, { memo } from "react";
 import { SongWrap } from "./style";
+import { Tag } from "antd";
 // react -router
-import {} from "react-router-dom";
+import { useParams } from "react-router-dom";
 const Song = memo(() => {
+  const params = useParams();
+  console.log(params);
   return (
     <SongWrap className="wrap-v2">
       <div className="left-content">
@@ -24,6 +27,18 @@ const Song = memo(() => {
           <span>播放</span>
         </div>
         {/* 标签区域 */}
+        <div className="tag-area">
+          <span>标签</span>
+          <div className="tag-list">
+            <Tag className="tagitem">欧美</Tag>
+          </div>
+        </div>
+        {/* 歌词部分 */}
+        <div className="song-word">
+          <ul>
+            <li>歌词部分</li>
+          </ul>
+        </div>
       </div>
     </SongWrap>
   );

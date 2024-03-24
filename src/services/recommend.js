@@ -33,3 +33,12 @@ export function getHotSingerlistData() {
     url: "/personalized/newsong",
   });
 }
+// 获取榜单数据
+export function getTopList(id) {
+  return request({
+    url: "/playlist/detail",
+    params: {
+      id,
+    },
+  });
+}
